@@ -62,6 +62,9 @@ function removeChildrenFromProps(props) {
     return props;
   }
 
+  // if children is just a string, dont delete
+  if (props.children && typeof props.children === "string") return props;
+
   const returnProps = { ...props };
 
   delete returnProps.children;
